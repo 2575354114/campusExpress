@@ -6,9 +6,16 @@
         <text class="name">{{item.ExpressNickName}}</text>
         <text class="time">{{item.ExpressTime}}</text>
       </view>
-      <view class="content-top-status" >
+      <view class="content-top-status" bindtap="statusClick" data-item="{{item}}" wx:if="{{item.status === '新发布'}}">
         {{item.status}}
       </view>
+      <view class="content-top-status" bindtap="DontClick" style="background-color: red;" wx:if="{{item.status === '已接单'}}">
+        {{item.status}}
+      </view>
+
+
+
+
     </view>
     <view class="content-middle">
       <view class="content-middle-top">
@@ -36,15 +43,20 @@
           <text>取件码</text>
           <text class="gray">{{item.ExpressCode}}</text>
         </view>
-        <view class="content-middle-body-lt">
+        <view class="content-middle-body-lt" >
           <image src="../../image/qq.png"></image>
           <text>{{item.ExpressQQ}}</text>
         </view>
-        <view class="content-middle-body-lt">
-            <image src="../../image/phone.png"></image>
-            <text>{{item.ExpressPhone}}</text>
-          </view>
+        <view class="content-middle-body-lt" >
+          <image src="../../image/phone.png"></image>
+          <text>{{item.ExpressPhone}}</text>
+        </view>
+        <view class="content-middle-body-lt" wx:if="{{item.status === '已接单'}}">
+          <button class="button-style" data-item="{{item}}" bindtap="showReceivOpenIds">查看接单人</button>
+        </view>
+
       </view>
     </view>
   </view>
 </view>
+

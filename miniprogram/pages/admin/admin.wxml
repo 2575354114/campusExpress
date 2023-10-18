@@ -1,0 +1,12 @@
+<!-- pages/admin/admin.wxml -->
+<view class="admin-page">
+  <!-- 用户管理按钮 -->
+  <button class="module-button" bindtap="users">
+    <text class="module-title">用户管理</text>
+  </button>
+
+  <!-- 任务管理按钮 -->
+  <button class="module-button" bindtap="order">
+    <text class="module-title">订单管理</text>
+  </button>
+</view>

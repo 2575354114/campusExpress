@@ -6,10 +6,14 @@
         <text class="name">{{item.ExpressNickName}}</text>
         <text class="time">{{item.ExpressTime}}</text>
       </view>
-      <view class="content-top-status" >
+      <view class="content-top-status" wx:if="{{item.status === '新发布'}}">
+        {{item.status}}
+      </view>
+      <view class="content-top-status" data-item="{{item}}" bindtap="statusClick" style="background-color: red;" wx:if="{{item.status === '已接单'}}">
         {{item.status}}
       </view>
     </view>
+
     <view class="content-middle">
       <view class="content-middle-top">
         <text class="top-left">取快递>>>{{item.ExpressLeiXing}}</text>
@@ -41,10 +45,11 @@
           <text>{{item.ExpressQQ}}</text>
         </view>
         <view class="content-middle-body-lt">
-            <image src="../../image/phone.png"></image>
-            <text>{{item.ExpressPhone}}</text>
-          </view>
+          <image src="../../image/phone.png"></image>
+          <text>{{item.ExpressPhone}}</text>
+        </view>
       </view>
     </view>
+
   </view>
 </view>

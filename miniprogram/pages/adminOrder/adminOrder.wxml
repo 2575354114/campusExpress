@@ -1,0 +1,23 @@
+<!--pages/adminOrder/adminOrder.wxml-->
+
+<view class="table-header">
+  <text>发布人</text>
+  <text>手机号</text>
+  <text>状态</text>
+  <text>操作</text>
+</view>
+
+<view class="user-list">
+  <block wx:for="{{orders}}" wx:key="_id">
+    <view class="user-item">
+      
+      <text class="nickname">{{item.ExpressNickName}}</text>
+      <text class="phoneNumber">{{item.ExpressPhone}}</text>
+      <text class="status" wx:if="{{item.status ==='新发布'}}" style="background-color: green; color: white;" >{{item.status}}</text>
+      <text class = "status" wx:if="{{item.status ==='已接单'}}" data-item="{{item}}" bind:tap="fixStatus"  style=" color:tomato;">{{item.status}}</text>
+      <text class="action" data-item="{{item}}" bindtap="deteil">查看详情</text>
+      <text class="action" data-item="{{item}}" bindtap="statusClick">删除</text>
+    </view>
+  </block>
+</view>
+

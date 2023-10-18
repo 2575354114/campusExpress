@@ -6,13 +6,16 @@
     "pages/formInfo/formInfo",
     "pages/myOrder/myOrder",
     "pages/myPublish/myPublish",
-    "pages/feedBack/feedBack"
+    "pages/feedBack/feedBack",
+    "pages/admin/admin",
+    "pages/adminOrder/adminOrder",
+    "pages/adminUsers/adminUsers"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "全校通",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -39,4 +42,5 @@
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
+  
 }

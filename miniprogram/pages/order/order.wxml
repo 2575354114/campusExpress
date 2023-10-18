@@ -1,10 +1,17 @@
-<view class="body">
+
+
+
+
+
+<scroll-view scroll-y="{{true}}" style="height: 100%;" bindscrolltoupper="onPullDownRefresh">
+  <view class="body">
   <view class="content" wx:for="{{Express}}" wx:key="index">
     <view class="content-top">
       <image src="{{item.ExpressAvatarUrl}}"></image>
       <view class="content-top-text">
         <text class="name">{{item.ExpressNickName}}</text>
         <text class="time">{{item.ExpressTime}}</text>
+        
       </view>
       <view class="content-top-status" >
         {{item.status}}
@@ -43,9 +50,10 @@
         <view class="content-middle-body-lt">
             <image src="../../image/phone.png"></image>
             <text>{{item.ExpressPhone}}</text>
-            <button style="width:30%;margin-left:150rpx;color:#fff;background-color:#f00" bindtap="robOrder" data-id="{{item._id}}" wx:if="{{item.status == '新发布'}}">抢单</button>
+            <button style="width:30%;margin-left:150rpx;color:#fff;background-color:#f00" bindtap="robOrder" data-orderopenid="{{item._openid}}"  data-id="{{item._id}}" wx:if="{{item.status == '新发布'}}" disabled="{{isRobbed}}">{{ isRobbed ? '已抢单' : '抢单' }}</button>
           </view>
       </view>
     </view>
   </view>
 </view>
+</scroll-view>

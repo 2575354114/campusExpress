@@ -1,19 +1,74 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx; /* 改成 rpx 单位 */
+}
+
 .body {
   display: flex;
-  flex-direction: row;
   width: 100%;
-  justify-content: center;
-  margin-top: 80rpx;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* 禁用水平滚动 */
+  margin: 0;
+  padding: 0;
+
 }
-.body view {
-  width: 250rpx;
-  height: 250rpx;
+
+
+.card {
+  width: 720rpx; /* 占据一行的宽度 */
+  height: 630rpx;
+  margin-bottom: 30rpx; /* 加上间隔 */
+  padding: 50rpx; /* 改成 rpx 单位 */
+  background-color: #ffffff;
+  border-radius: 30rpx; /* 改成 rpx 单位 */
+  box-shadow: 0 4rpx 18rpx rgba(0, 0, 0, 0.1); /* 改成 rpx 单位 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 垂直底部对齐 */
+  align-items: center; /* 水平居中对齐 */
   text-align: center;
-  line-height: 250rpx;
-  background-color: #fff;
-  box-shadow: 0 0 3rpx 3rpx;
-  font-size: 35rpx;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.body :nth-child(1) {
-   margin-right: 40rpx;
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.2); /* 改成 rpx 单位 */
+}
+
+.card-image-test {
+  height: 450rpx; /* 改成 rpx 单位 */
+  width: 750rpx; /* 改成 rpx 单位 */
+}
+
+.card img {
+  widows: 450rpx; /* 改成 rpx 单位 */
+  height: 150rpx; /* 改成 rpx 单位 */
+  border-radius: 50%;
+  margin-bottom: 10rpx; /* 改成 rpx 单位 */
+}
+
+.card h2 {
+  font-size: 40rpx; /* 改成 rpx 单位 */
+  color: #333;
+  margin-bottom: 20rpx; /* 改成 rpx 单位 */
+}
+
+.card button {
+  display: block;
+  margin: 0 auto;
+  padding: 13rpx 16rpx; /* 改成 rpx 单位 */
+  font-size: 28rpx; /* 改成 rpx 单位 */
+  border: none;
+  border-radius: 13rpx; /* 改成 rpx 单位 */
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card button:hover {
+  background-color: #0056b3;
 }

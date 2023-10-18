@@ -1,8 +1,16 @@
 <view class="body">
-  <view bindtap="gotoForm">
-    帮我代取
+  <view class="card" bindtap="gotoForm">
+    <image class="card-image-test" src="../../image/dai01.jpg" mode="aspectFill"></image>
+    <view class="card-content">
+      <h2 class="card-title">我要代取</h2>
+      <button class="card-button">发布订单</button>
+    </view>
   </view>
-  <view bindtap="gotoOrder">
-    我要代取
+  <view class="card" bindtap="gotoOrder">
+    <image class="card-image-test" src="../../image/zhuan.jpeg" mode="aspectFill"></image>
+    <view class="card-content">
+      <h2 class="card-title">我要接单</h2>
+      <button class="card-button">立即抢单</button>
+    </view>
   </view>
 </view>

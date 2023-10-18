@@ -1,10 +1,18 @@
 <scroll-view scroll-y class="scrollPage">
+
+
   <view class="UCenter-bg">
-    <button open-type="getUserInfo" bindtap="getUserProfile" wx:if="{{login == false}}">点击授权</button>
-    <image src="{{avatarUrl}}" class="png" style="border-radius:50%;" mode="widthFix" wx:if="{{login == true}}"></image>
-    <view class="text-xl" wx:if="{{login == true}}" style="margin-top:30rpx">{{nickName}}
+    <button class="button-container" bindtap="showDialog" wx:if="{{login == false}}">点击创建用户信息</button>
+    
+    
+    
+  <image src="{{avatarUrl}}" class="png" mode="aspectFill" wx:if="{{login == true}}"></image>
+
+    <view class="text-xl" wx:if="{{login == true}}" style="margin-top:30rpx; color: black;" >{{nickName}}
     </view>
-    <image src="https://tva3.sinaimg.cn/large/8d406c5egy1gamn31scsdg20f002skhn.gif" mode="scaleToFill" class="gif-wave"></image>
+    <view class="text-xl" wx:if="{{login == true}}" style="margin-top:30rpx; color: black;" >{{phoneNumber}}
+    </view>
+    
   </view>
 
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" wx:if="{{login}}">
@@ -26,6 +34,28 @@
         <text class="text-grey">客服反馈</text>
       </view>
     </view>
+    <view class="cu-item arrow" bindtap="admin" wx:if="{{showAdminLogin==true}}">
+      <view class="content" hover-class="none">
+        <image src="../../image/admin.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">管理员登录</text>
+      </view>
+    </view>
   </view>
   <view class="cu-tabbar-height"></view>
 </scroll-view>
+
+<!-- 遮罩层 -->
+<view class="mask" bindtap="closeDialog" wx:if="{{showDialog}}"></view>
+
+<!-- 弹出框 -->
+<view class="dialog" wx:if="{{showDialog}}">
+  <view class="avatar-container" bindtap="chooseAvatar">
+  <image class="avatar" src="{{avatarUrl}}" mode="aspectFill"></image>
+</view>
+  <input class="input-box" type="text" placeholder="请输入昵称" bindinput="inputNickName" value="{{nickName}}" />
+  <input class="input-box" type="text" placeholder="请输入手机号" bindinput="inputPhoneNumber" value="{{phoneNumber}}" />
+  
+  <button class="button-container" bindtap="submitInfo">提交信息</button>
+
+</view>
+
